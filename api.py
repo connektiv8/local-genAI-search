@@ -53,7 +53,11 @@ else:
         device_map="auto",
     )
 
-client = QdrantClient(path="qdrant/")
+#client = QdrantClient(path="qdrant/")
+client = QdrantClient(
+    url="https://0b30525d-03a5-45ff-bacb-e9742e568a36.us-east4-0.gcp.cloud.qdrant.io:6333", 
+    api_key="ss_-HoRNa8RKtSj2oiR0R6tjnHFFRL61jfeJI9H0sY6Uz2srgr9Dig",
+)
 collection_name = "MyCollection"
 qdrant = Qdrant(client, collection_name, hf)
 
