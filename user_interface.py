@@ -2,7 +2,7 @@ import re
 import streamlit as st
 import requests
 import json
-st.title('_:blue[Local GenAI Search]_ :sunglasses:')
+st.title('_:blue[Vagrant Generative AI Search]_ :sunglasses:')
 question = st.text_input("Ask a question based on your local files", "")
 if st.button("Ask a question"):
     st.write("The current question is \"", question+"\"")

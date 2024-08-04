@@ -1,7 +1,8 @@
 import PyPDF2
 from os import listdir
 from os.path import isfile, join,isdir
-from langchain_community.embeddings import HuggingFaceEmbeddings
+#from langchain_community.embeddings import HuggingFaceEmbeddings
+from langchain_huggingface import HuggingFaceEmbeddings
 from langchain_qdrant import Qdrant
 import sys
 from langchain_text_splitters import TokenTextSplitter
@@ -44,7 +45,11 @@ def main_indexing(mypath):
         model_kwargs=model_kwargs,
         encode_kwargs=encode_kwargs
     )
-    client = QdrantClient(path="qdrant/")
+    # client = QdrantClient(path="qdrant/")
+    client = QdrantClient(
+    url="https://0b30525d-03a5-45ff-bacb-e9742e568a36.us-east4-0.gcp.cloud.qdrant.io:6333", 
+    api_key="ss_-HoRNa8RKtSj2oiR0R6tjnHFFRL61jfeJI9H0sY6Uz2srgr9Dig",
+)
     collection_name = "MyCollection"
     if client.collection_exists(collection_name):
         client.delete_collection(collection_name)
