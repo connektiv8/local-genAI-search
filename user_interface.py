@@ -6,7 +6,7 @@ st.title('_:blue[Vagrant Generative AI Search]_ :sunglasses:')
 question = st.text_input("Ask a question based on your local files", "")
 if st.button("Ask a question"):
     st.write("The current question is \"", question+"\"")
-    url = "http://127.0.0.1:8000/ask_localai"
+    url = "https://vagrant-ai.streamlit.app:8000/ask_localai"
 
     payload = json.dumps({
       "query": question
